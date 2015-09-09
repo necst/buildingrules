@@ -12,4 +12,6 @@ A. A. Nacci, B. Balaji, P. Spoletini, R. Gupta, D. Sciuto, Y. Agarwal
 International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp 2015)
 
 
-Author: Alessandro A. Nacci, PhD Candidate.
+Author: Alessandro A. Nacci, PhD Candidate, alessandro.nacci@polimi.it
+http://box.necst.it
+http://www.alessandronacci.it
