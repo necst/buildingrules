@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <meta charset="utf-8">
+        <title>Bootply.com - Bootstrap Greenfield Template</title>
+        <title>http://bootstrapzero.com/bootstrap-template/greenfield</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{url_for('static', filename='css/bootstrap-responsive.min.css')}}" rel="stylesheet">
+        <link href="{{url_for('static', filename='css/font-awesome.min.css')}}" rel="stylesheet">
+        <link href="{{url_for('static', filename='css/bootswatch.css')}}" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
+        <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+
+        <!-- CSS code from Bootply.com editor -->
+        
+        <style type="text/css">
+            /* -- custom css for Bootstrap 3.x --*/
+
+/* move special fonts to HTML head for better performance */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600');
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* fix bs3 horizontal scrollbar bug */
+.row { margin: 0; padding: 0 }
+
+h1 {
+  font-size:45px; 
+}
+
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.icon-bar {
+   background-color:#fff;
+}
+
+.scroll-down a, .scroll-top a {
+   color:#ffffff;
+}
+
+.scroll-down {
+   position:fixed;
+   bottom:20%;
+   right:0%;
+   color:#f9f9f9;
+}
+
+.scroll-top {
+  background-color:#33ee67;
+}
+
+.header .btn-lg {
+   font-size:28px;
+   border-color:#eeeeee;
+   padding:15px;
+   background-color:transparent;
+   color:#ffffff;
+}
+
+.header .btn-lg:hover {
+   background-color:#eeeeee;
+   color:#777777;
+}
+
+.navbar a {
+  color:#fff;
+}
+
+.navbar-bold.affix {
+  background-color:#33ee67;
+}
+
+.navbar-bold {
+  background-color:#11cc45;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.navbar-bold li a:hover, .navbar-bold li.active {
+  background-color:#22dd56;
+}
+
+.vert {
+  vertical-align: middle;
+  width:100%;
+  padding-top:4%;
+}
+
+.header h1 {
+  font-size:110px;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+  color:#431a6d;
+  color:#fff;
+  margin-left:-5px;
+  margin-bottom:5px;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.header .lead {
+  color:#eeeeee;
+  font-size:25px;
+}
+
+.header {
+  height: 80%;
+  background: #11cc45 url('http://www.bootply.com/assets/example/pt_squares_lg.png') repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90%;
+}
+
+.blurb {
+  padding: 120px 0;
+  background-color:#fefefe;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90%;
+
+}
+
+.blurb .panel {
+  background-color:transparent;
+}
+
+.bright {
+  background: #7fbbda url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+  color:#fff;
+}
+
+.featurette {
+  background: #545455;
+  padding: 50px 0;
+  color: #ffffff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+
+}
+
+.featurette-item {
+  margin-bottom: 15px;
+}
+
+.featurette-item > i {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 56px;
+  width: 140px;
+  height: 140px;
+  line-height: 136px;
+  vertical-align: middle; 
+  text-align: center;
+}
+
+.featurette-item > i:hover {
+  font-size: 68px;
+}
+
+.callout {
+  color: #ffffff;
+  padding-top:7%;
+  height: 100%;
+  width: 100%;
+  background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.gallery {
+  padding: 50px 0;
+}
+
+.call-to-action {
+  background: #eeeeee;
+  padding: 50px 0;
+}
+
+.call-to-action .btn {
+  margin: 10px;
+}
+
+footer {
+  padding: 100px 0;
+}
+
+/* -- end custom css for Bootstrap 3.x --*/
+
+        </style>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    <script src="{{url_for('static', filename='js/ganttCreatorJavascript.js')}}"></script>    
+    <body>
+        
+        
+<div class="navbar navbar-fixed-top navbar-bold" data-spy="affix" data-offset-top="1000">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">EnergyBox</a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#sec1">Family Profile</a></li>
+        <li><a href="#sec2">Network</a></li>
+        <li><a href="#sec3">End</a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+
+<div class="header vert">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <h1>EnergyBox</h1>
+      <p class="lead">Configure your home appliances network</p>
+      <div>&nbsp;</div>
+      <a href="#sec1" class="btn btn-default btn-lg">Get Started</a>
+  </div>
+</div>
+
+<div id="sec1" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Select your family profile</h1>
+        <p class="lead">We need to know your family composition to make your home network more energy efficient</p>
+        
+        <div class="row"><br></div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            
+            <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+              <button type="button" class="btn btn-primary btn-lg btn-block">Single men</button>
+              <button type="button" class="btn btn-default btn-lg btn-block">Single women</button>
+              <button type="button" class="btn btn-default btn-lg btn-block">Group of friends (students)</button>
+              <button type="button" class="btn btn-default btn-lg btn-block">Couple</button>
+              <button type="button" class="btn btn-default btn-lg btn-block">Couple with child</button>
+            </div>
+
+
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="featurette" id="sec2">
+
+    <script type="text/javascript">
+        window.onload = function() {
+          {% for appliance in appliancesList %}
+            initAppliance('{{appliance.name}}');
+          {% endfor %}
+        };
+
+        function loadApplianceMenu(applianceName)
+        {
+          {% for appliance in appliancesList %}
+            initAppliance('{{appliance.name}}');
+          {% endfor %}          
+          showApplianceMenu(applianceName);
+        }
+
+    </script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Describe your home network</h1>
+      </div>
+    </div>
+    <div class="row"><br></div>
+    <div class="row">
+        {% for appliance in appliancesList %}
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="javascript:loadApplianceMenu('{{appliance.name}}')" class="list-group-item">
+              <span class="text-success"></span>{{appliance.label}}</a>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+
+      {% for appliance in appliancesList %}
+
+                    <div class="well" style="max-width: 450px; margin: 0 auto 10px; color: gray;" id="menu_{{appliance.name}}">
+
+                     <div id="timeslots_{{appliance.name}}">
+
+                        <h3 align="center">{{appliance.label}} timeslots</h3>
+                        <br>
+
+
+                        <form class="form-inline" role="form" id="ts_{{appliance.name}}_timeslot_0">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_from_0" placeholder="From">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_to_0" placeholder="To">
+                          </div>
+                        </form>
+
+                        <form class="form-inline" role="form" id="ts_{{appliance.name}}_timeslot_1">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_from_1" placeholder="From">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_to_1" placeholder="To">
+                          </div>
+                        </form>
+
+                        <form class="form-inline" role="form" id="ts_{{appliance.name}}_timeslot_2">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_from_2" placeholder="From">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_to_2" placeholder="To">
+                          </div>
+                        </form>
+
+                        <form class="form-inline" role="form" id="ts_{{appliance.name}}_timeslot_3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_from_3" placeholder="From">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="ts_{{appliance.name}}_timeslot_to_3" placeholder="To">
+                          </div>
+                        </form>
+
+                        <div align="center">
+                          <br>
+                          <button type="button" class="btn btn-default" onclick="removeSlot('{{appliance.name}}');">-</button>
+                          <button type="button" class="btn btn-default" onclick="sendValues('{{appliance.name}}');">Confirm</button>
+                          <button type="button" class="btn btn-default" onclick="addSlot('{{appliance.name}}');">+</button>
+                        </div>
+
+                        <div align="center"><br><a href="javascript:showApplianceSettings('{{appliance.name}}');">Open appliance settings</a></div>
+
+
+                      </div>
+
+                      <form class="form-horizontal" role="form" id="settings_{{appliance.name}}">
+
+                        <h3 align="center">{{appliance.label}} settings</h3>
+                        <br>
+
+
+                        <div class="form-group">
+                          <label for="settings_{{appliance.name}}_brand" class="col-sm-2 control-label">Brand</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="settings_{{appliance.name}}_brand" placeholder="Samsung">
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="settings_{{appliance.name}}_model" class="col-sm-2 control-label">Model</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="settings_{{appliance.name}}_model" placeholder="DS800">
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="settings_{{appliance.name}}_appID" class="col-sm-2 control-label">AppID</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="settings_{{appliance.name}}_appID" placeholder="A unique indentifier">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="settings_{{appliance.name}}_address" class="col-sm-2 control-label">Address</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="settings_{{appliance.name}}_address" placeholder="http://192.168.1.7/api/currentValue">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="settings_{{appliance.name}}_type" class="col-sm-2 control-label">Type</label>
+                          <div class="col-sm-10">
+                          <select class="form-control" id="settings_{{appliance.name}}_type">
+                            <option value="volvo">Smart appliance</option>
+                            <option value="saab">Standard appliance with smart plug</option>
+                          </select>              
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-default">Save settings</button>
+                          </div>
+                        </div>
+
+                        <div align="center"><br><a href="javascript:showApplianceTimeslots('{{appliance.name}}');">Open appliance timeslots</a></div>
+
+                      </form>
+
+                    </div>
+
+                </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<div class="callout" id="sec3">
+  <div class="vert">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1 style="font-size:1000%">Thank you</h1>
+        <br>
+      </div>
+  </div>
+
+</div>
+
+<hr>
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <p>EnergyBox Project<br> Alessandro A. Nacci - <a href="mailto:alessandro.nacci@polimi.it">alessandro.nacci@polimi.it</a><br>Politecnico di Milano ©2014</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<ul class="nav pull-right scroll-down">
+  <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
+</ul>
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="icon-chevron-up icon-3x"></i></a></li>
+</ul>
+
+        
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/jquery.smooth-scroll.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootswatch.js')}}"></script>
+
+
+        <script type='text/javascript'>        
+        $(document).ready(function() {
+        
+            /* smooth scrolling for scroll to top */
+            $('.scroll-top').click(function(){
+              $('body,html').animate({scrollTop:0},1000);
+            })
+            /* smooth scrolling for scroll down */
+            $('.scroll-down').click(function(){
+              $('body,html').animate({scrollTop:$(window).scrollTop()+800},1000);
+            })
+
+            /* highlight the top nav as scrolling occurs */
+            $('body').scrollspy({ target: '#navbar' })
+
+        
+        });
+        
+        </script>
+        
+    </body>
+</html>

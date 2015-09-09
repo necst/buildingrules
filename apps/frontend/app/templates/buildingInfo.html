@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+
+
+
+
+	<h3>Building {{buildingInfo.label}}</h3>
+	<br>
+
+	<bold>Description</bold>
+	<p>{{buildingInfo.description}}</p>
+	
+	<ul>
+		<li><a href="{{request.path}}/rooms">Show rooms</a></li>
+		<li><a href="{{request.path}}/groups">Show groups</a></li>
+	</ul>
+
+  {% endif %}
+{% endblock %}

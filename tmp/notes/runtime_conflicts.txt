@@ -1,0 +1,88 @@
+#
+# BULDING RULES Notes
+# Author: Alessandro A. Nacci - alessandro.nacci@polimi.it
+# 
+# HOW TO SOLVE RUN-TIME CONFLICTS
+#
+#
+# This pseudo-code describe the tecnique for the selection of the action
+# that must be applied at runtime. In fact, some conflicts can arise at run-time
+# after the formal logical verification checking performed offline. Let us make
+# an example with the following two rules:
+#
+#	I.  if it is rainy then turn off the light
+#	II: if it is after 8PM then turn on the light
+#
+# The two rules are in conflicts in the case that 
+#	it is rainy == True 	AND 	it is afeter 8PM == True
+# so, a simple logical analysis should say: "you cannot specify these rules".
+# Anyway, this behavior is wrong since the user is saying something like:
+#
+#	generally, turn on the light after 8AM but not when it is rainy
+#
+# In order to let the user express this kind of intention keeping the rule
+# structure very simple, we can introduce a priority for the rules and say
+# that, at runtime, if two rules want to act on the same subject (the light),
+# only the action with the highest priority has to be executed.
+# 
+# So, let us explain the pseudo-code that perform the right actions execution:
+# 
+#	 1.  Get the room list per each considered building
+#	 2.  Get the rule list per each considered room
+#	 3.  Verify the antecedent of each rule (read the sensor value and 
+#		  give me True if the rule antecedent is True)
+#	 4.  Save each "triggered" rule in a list, triggeredRules[]
+#	 5.  Now we have to solve some run-time conflict that can arise from different 
+#		  antecedent categories but same consequent categories (different trigger, same action subject)
+#	 6.  Let us say that there is no run-time conflict: all the 
+#		  rules has to be executed (rule.toExecute = True)
+#	 7.  Let us make a comparison among each rule A with all the other rules B (A != B). 
+#		  Let consider only the rules A that are declared as to be executed
+#	 8.  If the rule A has the same action subject than the rule B but different parameters 
+#		  there is a rune-time conflict  (if the parameters are the same it means that the action 
+#		  to be performed is the same, so, no conflict)
+#	 9.  If a run-time conlict exists, let us say that the rule with lower priority will not be
+#		  executed. So, if A.priority > B.priority, then B.toExecute = False
+#	 10. Get, among all the triggered rules, the one that have the "toExecute" flag equal to True
+#	 11. Excecute those rules
+#	 
+#	 
+
+for building in buildings:
+	rooms = buildings.rooms
+	for room in rooms:
+		
+		actionToPerform = []
+		triggeredRules = []
+		
+		rules = room.ruleList
+		for rule in rules:
+			if rule.verifyAntecedent():
+				triggeredRules.append(rule)
+
+
+		for rule in triggeredRules:
+			rule.toExecute = True
+
+		for currentRule in triggeredRule:
+			for otherRule in triggeredRule:
+				if currentRule.toExecute:
+					if currentRule != otherRule:
+						if currentRule.getAction().subject == otherRule.getAction().subject:
+							if currentRule.getAction().getParamListStr() != otherRule.getAction().getParamListStr():
+
+								if currentRule.priority > otherRule.priority:
+									otherRule.toExecute = False
+								elif currentRule.piority < otherRule.priority:
+									currentRule.toExecute = False
+								else:
+									print "RunTime error"
+
+		for rule in triggeredRule:
+			if rule.toExecute:
+				rule.getAction().execute()
+
+
+
+
+

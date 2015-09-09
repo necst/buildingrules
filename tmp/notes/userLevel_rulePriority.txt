@@ -1,0 +1,103 @@
+#
+# BULDING RULES Notes
+# Author: Alessandro A. Nacci - alessandro.nacci@polimi.it
+# 
+# RULE PRIORITY AND USER LEVEL: two different goals
+#
+
+This document will show why having both a user level and a priority for the single is necessary.
+Now, let us introduce some preliminary concepts.
+
+A single rule is an object with some attributes and methods. For the sake of simplicity I will
+city here only those ones that are related to the scope of this document.
+
+	Rule
+	+ ID
+	+ priority (int)
+	+ user (User obj)
+	+ minimum_user_level (int)
+	+ ...
+
+	User
+	+ uuid (char[])
+	+ username (char[])
+	+ level (int)
+	+ ...
+
+The rule priority is meant to manage the runtime conflict that can arise when two rules with the
+same action subject are triggered in the same room. More details about this aspect can be found
+in the other document "runtime_conflicts.txt". Here a problem still exists since the case of
+different "action areas" that groups more than one room is not managed. Anyway, this issue
+can be solved adding an additional attribute to group the rules not by room but by action-area.
+Let us make an example: if I have the following two rules:
+
+	for room A: if it is after 8AM then turn the heating off
+	for room B: if it is after 8AM then turn the heating on
+
+Now, if the HCAV system is fine grained at the room level, no problem arises. But, what
+happens if room A and B are in the same thermal zone? In this case the two rules are in 
+conflict. This problem can be partially solved creating a group that represent the 
+themal zone A+B. Let us make an example:
+
+	Group AB
+	+ if it is after 8AM then turn the heating off
+
+	Room A
+	+ if it is after 8AM then turn the heating off [Author: Group AB]
+	+ if it is after 8AM then turn the heating off [Author: Room A]
+
+	Room B
+	+ if it is after 8AM then turn the heating off [Author: Group AB]
+	+ if it is after 8AM then turn the heating on [Author: Room B]
+
+Now, as you can see, the two rooms have inherited the rule from Group AB. Now, the
+rule specified by room A (the second one) is clearly useless. But, it is possible
+to see that now in Room B a conclifct arises.
+
+
+Ok. We have solved static (offline) conflicts. But it happen that conflict
+about rules with different triggers but same action subject cannot be detected
+offline since, formally, they are not in conflict (more details about this aspect
+can be found in the other document).
+
+In order to solve this issue it is possible then to make the runtime verification
+process considering the actuation areas (not the single room).
+
+Now, why do we need a user_lvel? Basically we need for two reasons:
+
+	+ to manage the edit permissions about the rules
+	+ to let the admins to express "very high priority" rules
+
+The first point is related to this situation. Let us say
+	
+	+ we have many different users U_i
+	+ the users are organized in a hierarchial tree
+	+ users with higher level can modify the rules expressed by lower level users
+	  on the same tree path
+
+In this way it is simple to manage the user right on the modifcaiton of the rules. For
+instance, colleagues with the same power in the same room can agree on the final
+ruleset the want; on the otherside, the head of a group of room can impose some
+restrictions (if he wants).
+
+There is another problem that is stil not solved. There are rules that are part of
+the genaral managing of the building (like some physical limits) that must not be
+overrided by anyone. To solve this problem, we have two different possibile solution:
+
+	+ we can say that some users are "super-users" that can express an higher
+	 rule priority; for instance, standard users rule priority can vary between
+	 0 and 100 while the super-users rule priority can vary betweek 101 and 200.
+
+	+ we can say that there is no "super-user" but that the maximum priority
+	 than a user can assign to a rule he expressed is proporational to the
+	 user level.
+
+There is another problem: how we let the user expressing the rule priority? How can
+we visualize the rule priority? Maybe we can order the rules by priority.
+
+
+
+
+
+
+

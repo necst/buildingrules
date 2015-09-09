@@ -1,0 +1,375 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  {% if session.logged_in %}
+
+	<style>
+	    .wrap { width: 750px; height: 390px; padding: 0; overflow: hidden; }
+	    .frame { width: 1000px; height: 700px; border: 0px solid black; }
+	    .frame {
+	        -ms-zoom: 0.95;
+	        -moz-transform: scale(0.95);
+	        -moz-transform-origin: 0 0;
+	        -o-transform: scale(0.95);
+	        -o-transform-origin: 0 0;
+	        -webkit-transform: scale(0.95);
+	        -webkit-transform-origin: 0 0;
+	    }
+	</style>
+
+	<style>	
+		.ruleNav_OCCUPANCY 				{background-color:#F78181;}
+		.ruleNav_EXT_TEMPERATURE 		{background-color:#F7BE81;}
+		.ruleNav_TIME 					{background-color:#F5DA81;}
+		.ruleNav_DATE 					{background-color:#F3F781;}
+		.ruleNav_WEATHER 				{background-color:#D8F781;}
+		.ruleNav_ROOM_TEMPERATURE 		{background-color:#BEF781;}
+		.ruleNav_DEFAULT_STATUS 		{background-color:#9FF781;}
+		.ruleNav_DAY 					{background-color:#A9E2F3;}
+		.ruleNav_EXTERNAL_APP 			{background-color:#D0A9F5;}
+	</style>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/rooms.js') }}"></script>
+	<script>
+	window.onload = function(){
+	init();
+	{% if alreadyLoggedIn %}
+	{% else %}
+	document.getElementById('showGuideButton').click();
+	{% endif %}
+	};
+	{% for category in categories %}
+		ruleCategories.push("{{category}}");
+	{% endfor %}
+	
+	{#
+	{% if mTurkStatus.experimentCompleted %}
+		// THIS IS NEED TO SHOW THE END OF EXPERIMENT MESSAGE
+		alert("You finished your experiment!")
+		window.location.hash="mTurkPanel";
+	{% else %}
+		{% if mTurkStatus.taskCompleted %}
+			alert("You finished your today task!")
+			window.location.hash="mTurkPanel";
+		{% endif %}
+	{% endif %}
+	#}
+
+	</script>
+
+	<script type="text/javascript">
+	var popupStyle = "top=10, left=10, width=350, height=250, status=no, menubar=no, toolbar=no, scrollbars=yes";
+	
+	function openPopup(url) 
+	{
+		window.open(url, "", popupStyle);
+	}
+	</script>
+
+
+	<!-- Modal -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 700px; margin-left: -350px;">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">User Guide</h3>
+	  </div>
+
+  	<div class="alert alert-block" align="center">
+		<h3>New action policy!</h3><strong>From today, the rule editing will count as an action!</strong>
+		<br>Please, do NOT insert random rules! If you disagree with some policies, change existing rules!
+	</div>
+
+	  <div class="modal-body" align="center">
+	    <iframe width="670" height="410" src="//www.youtube.com/embed/p_J9PcgyATc?rel=0&vq=hd720" frameborder="0" allowfullscreen></iframe>
+	  </div>
+	  <div class="modal-body">
+		We are conducting an academic experiment to gauge the ease of use of a new technology to manage Smart Buildings. The technology is a web application that allows you to specify policies you would want in your office. You can set policies like turn on office lights when it is raining, or turn on cooling when temperature is 75F. The software makes sure that you don't conflict other employees in the office or the policies set by the building manager. 
+	  </div>
+	  <div class="modal-footer">
+	    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+	  </div>
+	</div>
+
+	{#
+  	<div class="alert alert-block" align="center">
+		<h1>New action policy!</h1><strong>From today, the rule editing will count as an action!</strong>
+		<br>Please, do NOT insert random rules! If you disagree with some policies, change existing rules!
+	</div>
+	#}
+
+	{#
+	<div class="form-actions"> 
+		<a name="mTurkPanel" id="mTurkPanel"></a>
+		<a class="btn btn-lg btn-success" href="javascript:hideMTurk()" id="btnHideMTurk">Hide this panel</a>
+		<a class="btn btn-lg btn-success" href="javascript:showMTurk()" id="btnShowMTurk">Show experiment Panel</a>
+		<div id="mturkPanel">
+			<h3 align="center">Research Experiment Panel</h3>
+			<h6 align="center">Experiment day: {{mTurkStatus.currentDay}}/7 - Current datetime: {{mTurkStatus.serverDatetime}} GMT-8</h6>
+
+			{% if mTurkStatus.taskCompleted %}
+				<div class="alert alert-success">
+					<h5 align="center">Today task completed</h5>
+					<h6 align="center">At the end of the week you have to insert this token as proof of your work to get the Amazon Gift Card.</h6>
+					<h6 align="center">{{mTurkStatus.token}}</h6>
+				</div>
+				<div class="alert alert-block" align="center">
+					<strong>STORE THIS TOKEN RIGHT NOW!</strong> <br> Store this token somewhere on your computer before refreshing the page! 
+				</div>
+			{% else %}
+				<div class="alert alert-block" align="center">
+					<h5>Today task NOT completed</h5>
+					<h6 align="center">{{mTurkStatus.message}}</h6>
+				</div>
+			{% endif %}
+
+			{% if mTurkStatus.experimentCompleted %}
+				<div class="alert alert-success">
+					<h4 align="center">You completed the whole expriment!</h4	> 
+
+					<h6 align="center">Now <a href="http://goo.gl/kXQ3wy" target="_blank">click here</a> to complete the experiment final survey. 
+					<h6 align="center">Then <a href="https://docs.google.com/forms/d/1Z8HbFdFRbn09NFuQmetSp8bX1HJqt86_MK_dR8UMwz8/viewform" target="_blank">click here</a> to insert all your token as a work proof and finally get your Amazon Gift Card!</h6>
+				</div>
+			{% endif %}
+
+			<hr>
+
+			<div align="center">
+				<h5>Do you have any suggestion? Or do you want to give us a score? Use this form!</h5>
+				<form class="form-inline" action="{{url_for('gui.sendFeedback')}}" method="POST">
+					<input name="alternativeContact" class="span3" type="email"  class="input-small" placeholder="Your email (if you want)...">
+					<input name="score" type="text" class="input-small" placeholder="Score [0/10]...">
+					<input name="message" type="text" class="input-xxlarge" placeholder="Put here your feedback message...">
+					<button type="submit" class="btn">Send feedback</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	#}
+
+	<br>
+	
+
+
+	<header class="jumbotron subhead" id="overview">
+	<a name="buildingMap" id="buildingMap"></a>
+	    <div class="span8">
+	      <h1>My Rooms</h1>
+	      <p class="lead">With this page you can create your own simple rules for your own personal spaces. Just add the rules inside the correct box and... that's all!</p>
+	      <br>
+	      <a href="#rulesPanel" role="button" class="btn btn-primary ">Go to the rules panel!</a>
+	      <a href="#myModal" role="button" class="btn" data-toggle="modal" id="showGuideButton">Show the Video User Guide!</a>
+	    </div>
+	    <div class="span4">
+	    </div>
+	</header>
+
+	<br>
+	<br>
+	<br>
+
+	{% if roomList %}
+		<section id="typography">
+
+			<a name="rulesPanel" id="rulesPanel"></a>
+
+			<div class="form-actions">
+				<a class="btn btn-lg btn-success" href="javascript:showMaps()" id="btnShowMaps">Show Map</a>
+				<a class="btn btn-lg btn-success" href="javascript:hideMaps()" id="btnHideMaps">Hide Map</a>
+				<a class="btn btn-lg btn-success" href="javascript:showThermalZoneMaps()" id="btnShowThMaps">Show Shared Actuation Zones Map</a>
+				<a class="btn btn-lg btn-success" href="javascript:showAccessMaps()" id="btnShowAccMaps">Show Access Rights Map</a>
+			  	<div id="accessMap">
+			  		<img src="{{url_for('static', filename='roomMaps/')}}{{mapFileName}}">
+			  		<br>
+			  		<b>This maps shows the rooms you can access</b>
+			  	</div>
+			  	<div id="thZoneMap">
+			  		<img src="{{url_for('static', filename='roomMaps/thermalZonesMap.png')}}">
+			  		<br>
+			  		<b>If your room has the same color of another room, you will share all the rules about the HEATING!</b>
+			  	</div>
+			 </div>
+
+
+			{% for room in roomList %}
+
+
+				<a name="roomMenu_{{room.roomName}}" id="roomMenu_{{room.roomName}}"></a>
+				<div class="row"> 
+				<br>
+				<br>
+				<br>
+
+				  <div class="span8">
+				    <h3>Room {{room.roomName}} - {{room.description}}</h3>
+
+
+
+					<div class="bs-docs-example">
+			            <ul id="myTab" class="nav nav-tabs">
+			              <li class="active"><a href="#rulePanel_{{room.roomName}}" data-toggle="tab">Rules Editor</a></li>
+			              <li><a href="#roomBehavior_{{room.roomName}}" data-toggle="tab">Room Behavior</a></li>
+			              <li><a href="#ruleNavigator_{{room.roomName}}" data-toggle="tab">Rules Navigator</a></li>
+			            </ul>
+			            <div id="myTabContent" class="tab-content">
+			              <div class="tab-pane fade in active" id="rulePanel_{{room.roomName}}">
+
+			              		
+								<div class="btn-toolbar" style="background-color:#F5F5F5; padding:10px;">
+									  <h5>Filter by category</h5>
+									  <a href="javascript:filterByRuleCategory('{{room.roomName}}','SHOWALL')"><button class="btn active" id="btn_{{room.roomName}}_SHOWALL" style="font-size: x-small" >SHOW ALL</button></a>
+									  {% for category in categories %}
+									  	<a href="javascript:filterByRuleCategory('{{room.roomName}}','{{category}}')"><button class="btn" id="btn_{{room.roomName}}_{{category}}" style="font-size: x-small">{{category}}</button></a>
+									  	{{loop.counter }}
+									  {% endfor %}
+								</div>				    
+							    <hr>
+							    {% for rule in roomRules[room.roomName] %}
+							    	<blockquote {% if rule.id in activeRoomRules[room.roomName] %} style="color:#77AE3B;" {% endif %} class="rule_{{room.roomName}}_{{rule.category}}">
+							    		<p {% if rule.enabled %} {% else %} class="muted" {% endif %}>
+							    			{% if rule.enabled %} {% else %} <strike> {% endif %}
+							    				<b>if</b> {{rule.antecedent}} <b>then</b> {{rule.consequent}} 
+							    			{% if rule.enabled %} {% else %} </strike> {% endif %}
+											<small class="muted">
+											<span class="badge">{{rule["priority"]}}</span>
+												By:
+												{% if session.userUuid == rule.authorUuid%}
+													You
+												{% else %}
+													{{authorList[rule.authorUuid].personName}} - <i>{{authorList[rule.authorUuid].email}}</i>
+												{% endif %}
+
+												{% if rule.groupId %} 
+													(Group {{rule.groupId }}-{{groupList[rule.groupId].description}}
+													{% if rule.roomName %} 
+														{% if rule.roomName == room.roomName %} {% else %} / Room {{rule.roomName}} {% endif %} 
+													{% endif %}
+													)
+												{% endif %}
+
+												{% if rule.groupId and rule.roomName %}
+												- [<a href="{{request.path}}/../groups/{{rule.groupId}}/rooms/{{rule.roomName}}/rules/{{rule.id}}/edit">Edit</a>]
+												  [<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/delete">Delete</a>]
+												  
+												{% else %}
+													{% if rule.roomName %}
+														- [<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/edit">Edit</a>] [<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/delete">Delete</a>]
+														{% if rule.enabled %}
+															[<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/disable">Disable</a>]
+														{% else %}
+															[<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/enable">Enable</a>]
+														{% endif %}
+													{% endif %}
+												{% endif %}
+											</small>
+							    		</p>
+							    	</blockquote> 
+							    {% endfor %}
+								<br>
+						      	<a href="{{request.path}}/{{room.roomName}}/rules/add"><button type="button" class="btn  btn-primary ">Add a new rule</button></a>
+
+
+
+			              </div>
+			              <div class="tab-pane fade" id="roomBehavior_{{room.roomName}}">
+			              	<div class="container">
+			              	<iframe src="{{request.path}}/{{room.roomName}}/graphicalView" class="frame"></iframe>
+			              	</div>
+			              </div>
+			              <div class="tab-pane fade" id="ruleNavigator_{{room.roomName}}">
+			              	<div class="container">
+			              	
+			              		<table border="1" style="font-size:x-small;"> 
+								
+				              		{% for category in categories %}
+					              		<tr>
+					              			<td style="background-color:#72AC44; color:white;">{{category}}</td>
+					              			{% for rule in roomRules[room.roomName] %}
+					              				{% if category == rule.category %}
+					              					<td class="ruleNav_{{rule.triggersCategory[0]}}">
+					              						Priority: {{rule.priority}} 
+					              						<br>
+					              						{% if rule.enabled %} {% else %} <strike> {% endif %}
+					              							{% for triggerCategory in rule.triggersCategory %}
+					              								<b>{{triggerCategory}}</b> <br>
+					              							{% endfor %}
+					              						{% if rule.enabled %} {% else %} </strike> <b>(disabled)</b>{% endif %}
+					              						<br>
+					              						[<a href="javascript:alert('if {{rule.antecedent}} then {{rule.consequent}} ')">Info</a>]
+					              						[<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/edit">Edit</a>]
+					              						[<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/delete">Delete</a>]
+														{% if rule.enabled %}
+															[<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/disable">Disable</a>]
+														{% else %}
+															[<a href="{{request.path}}/{{rule.roomName}}/rules/{{rule.id}}/enable">Enable</a>]
+														{% endif %}
+
+					              					</td>
+					              				{% endif %}
+					              			{% endfor %}
+					              		</tr>
+				              		{% endfor %}
+			              		</table>
+
+			              	</div>
+			              </div>
+			            </div>
+			          </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				    
+
+				  </div>
+				  <div class="span4">
+				    <div class="well">
+			    
+				    
+				      <h4>Sensors</h4>
+				      <p>
+				      	{% for trigger in triggerList[room.roomName] %}
+				      		{{trigger.description}}, 
+				      	{% endfor %}
+				      </p>
+				      <br>
+				      <h4>Actuators</h4>
+				      <p>
+				      	{% for action in actionList[room.roomName] %}
+				      		{{action.description}}, 
+				      	{% endfor %}
+				      </p>
+				      <br>
+				      <h4>Occupants:</h4>
+				      <p>
+				      	{% for user in userList[room.roomName] %}
+				      		{{user.username}}, 
+				      	{% endfor %}				      	
+				      </p>
+				      <br>
+				      <h4>Part of groups: <br> <small>Click on the group name to see the room list</small></h4>
+
+				      	{% for group in roomGroupList[room.roomName] %}
+				      		<a href="javascript:openPopup('{{request.path}}/../groups/{{group.id}}');">{{group.id}}:{{group.description}}</a>, 
+				      	{% endfor %}				      	
+
+				    </div>
+				  </div>
+				</div>
+		  	{% endfor %}
+		</section>
+	{% endif %}
+
+
+  {% endif %}
+{% endblock %}

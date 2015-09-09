@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+
+
+
+
+	<h3>My Buildings!</h3>
+	<br>
+
+	<ul>
+	{% for building in buildings %}
+		<li><a href="{{request.path}}/{{building.buildingName}}">{{building.buildingName}}</a></li>
+	{% endfor %}
+	</ul>
+
+  {% endif %}
+{% endblock %}

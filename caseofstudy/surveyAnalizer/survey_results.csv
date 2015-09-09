@@ -1,0 +1,450 @@
+,RuleSet
+1/23/2014 17:33:29,"SavedRules:3
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|temperature is between|60 F|71 F|-|-|-|-|turn on the heating|
+Rule_2|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_3|it is rainy|-|-|-|-|-|-|open curtains|
+"
+1/23/2014 17:36:32,"SavedRules:3
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_2|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_3|it is between (time)|-|-|00.00|06.00|-|-|turn off the heating|
+"
+1/23/2014 19:36:12,"SavedRules:9
+Rule_0|it is between (time)|-|-|00.00|06.00|-|-|turn off the heating|
+Rule_1|it is between (time)|-|-|19.00|23.59|-|-|turn off the heating|
+Rule_2|someone is in the room|-|-|00.00|06.00|-|-|turn on the light|
+Rule_3|someone is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_4|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_5|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_6|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the heating|
+Rule_7|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_8|temperature is between|24 C|28 C|-|-|-|-|turn off the heating|
+Rule_9|temperature is between|15 C|21 C|-|-|-|-|turn on the heating|
+"
+1/23/2014 19:47:45,"SavedRules:3
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|temperature is between|60 F|70 F|-|-|-|-|turn on the heating|
+Rule_3|temperature is between|78 F|83 F|-|-|-|-|turn off the heating|
+"
+1/23/2014 20:46:50,"SavedRules:2
+Rule_0|Select a trigger|-|-|-|-|-|-|Select an action|
+Rule_1|Select a trigger|-|-|-|-|-|-|Select an action|
+Rule_2|Select a trigger|-|-|-|-|-|-|Select an action|
+"
+1/23/2014 21:39:23,"SavedRules:2
+Rule_0|someone is in the room|19 C|21 C|-|-|-|-|open curtains|
+Rule_1|it is between (time)|-|-|07.00|19.00|-|-|turn on the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|close curtains|
+"
+1/23/2014 22:21:52,"SavedRules:2
+Rule_0|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_1|it is between (time)|-|-|13.00|14.00|-|-|open the window|
+Rule_2|it is between (day)|-|-|-|-|Sunday|Monday|turn on the heating|
+"
+1/23/2014 22:31:47,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|Select a trigger|-|-|-|-|-|-|Select an action|
+Rule_2|Select a trigger|-|-|-|-|-|-|Select an action|
+"
+1/23/2014 22:42:12,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|it is rainy|-|-|-|-|-|-|close the window|
+Rule_2|nobody is in the room|-|-|-|-|-|-|close the window|
+"
+1/23/2014 22:50:25,"SavedRules:4
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the coffee machine|
+Rule_3|temperature is between|15 C|18 C|-|-|-|-|turn on the heating|
+Rule_4|temperature is between|23 C|28 C|-|-|-|-|turn off the heating|
+"
+1/23/2014 22:59:02,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_2|it is rainy|-|-|-|-|-|-|open curtains|
+"
+1/23/2014 23:22:34,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_2|it is between (time)|-|-|08.00|09.00|-|-|turn on the coffee machine|
+"
+1/23/2014 23:27:18,"SavedRules:4
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the coffee machine|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_3|someone is in the room|-|-|-|-|-|-|open curtains|
+Rule_4|nobody is in the room|-|-|-|-|-|-|close curtains|
+"
+1/23/2014 23:33:39,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is sunny|20 C|-|-|-|-|-|close curtains|
+Rule_2|temperature is between|18 C|21 C|-|-|-|-|turn off the heating|
+"
+1/23/2014 23:53:37,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|open the window|
+Rule_2|it is between (time)|-|-|07.00|09.00|-|-|turn on the coffee machine|
+"
+1/24/2014 0:05:29,"SavedRules:8
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is rainy|-|-|-|-|-|-|close the window|
+Rule_3|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_4|it is rainy|-|-|-|-|-|-|open curtains|
+Rule_5|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_6|someone is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_7|it is between (time)|-|-|19.00|06.00|-|-|turn on the light|
+Rule_8|Select a trigger|-|-|-|-|-|-|Select an action|
+"
+1/24/2014 0:08:38,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|temperature is between|60 F|70 F|-|-|-|-|turn on the heating|
+"
+1/24/2014 0:11:06,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|15 C|19 C|-|-|-|-|turn on the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the coffee machine|
+"
+1/24/2014 0:17:39,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|close the window|
+Rule_2|nobody is in the room|-|-|-|-|-|-|close curtains|
+"
+1/24/2014 0:19:51,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_2|it is between (time)|-|-|08.00|17.00|-|-|turn on the heating|
+"
+1/24/2014 0:25:44,"SavedRules:4
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|21 C|28 C|-|-|-|-|turn off the heating|
+Rule_2|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_3|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_4|it is rainy|-|-|-|-|-|-|close the window|
+"
+1/24/2014 0:35:38,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is sunny|-|-|-|-|-|-|turn off the heating|
+Rule_2|it is sunny|-|-|-|-|-|-|close curtains|
+"
+1/24/2014 1:17:38,"SavedRules:4
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|15 C|17 C|-|-|-|-|turn on the heating|
+Rule_2|it is sunny|-|-|17.00|18.00|-|-|close curtains|
+Rule_3|it is rainy|-|-|-|-|-|-|turn on the light|
+Rule_4|it is between (time)|-|-|09.00|16.00|-|-|turn off the light|
+"
+1/24/2014 1:23:44,"SavedRules:10
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_3|someone is in the room|-|-|-|-|-|-|open curtains|
+Rule_4|nobody is in the room|-|-|-|-|-|-|turn off the microwave|
+Rule_5|nobody is in the room|-|-|-|-|-|-|turn off the coffee machine|
+Rule_6|nobody is in the room|-|-|-|-|-|-|close curtains|
+Rule_7|nobody is in the room|-|-|-|-|-|-|close the window|
+Rule_8|it is between (time)|-|-|06.00|09.00|-|-|turn on the coffee machine|
+Rule_9|temperature is between|15 C|18 C|-|-|Monday|Friday|turn on the heating|
+Rule_10|temperature is between|18 C|27 C|-|-|-|-|turn off the heating|
+"
+1/24/2014 1:37:58,"SavedRules:4
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_2|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_3|it is between (day)|-|-|-|-|Monday|Friday|turn on the coffee machine|
+Rule_4|it is rainy|-|-|-|-|-|-|close the window|
+"
+1/24/2014 2:42:33,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|it is sunny|-|-|-|-|-|-|open curtains|
+"
+1/24/2014 2:46:17,"SavedRules:7
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_3|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_4|temperature is between|20 C|28 C|-|-|-|-|open the window|
+Rule_5|temperature is between|15 C|18 C|-|-|-|-|turn on the heating|
+Rule_6|it is between (time)|-|-|08.00|18.00|-|-|turn on the coffee machine|
+Rule_7|it is between (time)|-|-|12.00|14.00|-|-|turn on the microwave|
+"
+1/24/2014 3:08:41,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|67 F|77 F|-|-|-|-|turn off the heating|
+Rule_2|it is between (time)|-|-|08.00|16.00|-|-|turn on the coffee machine|
+"
+1/24/2014 3:45:17,"SavedRules:3
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_3|nobody is in the room|-|-|-|-|-|-|turn on the heating|
+"
+1/24/2014 4:00:48,"SavedRules:5
+Rule_0|someone is in the room|15 C|18 C|-|-|Monday|Friday|turn on the light|
+Rule_1|temperature is between|22 C|28 C|-|-|-|-|open the window|
+Rule_2|temperature is between|15 C|18 C|08.00|19.00|-|-|turn on the heating|
+Rule_3|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_4|nobody is in the room|-|-|-|-|-|-|close the window|
+Rule_5|it is sunny|-|-|-|-|-|-|close curtains|
+"
+1/24/2014 4:12:02,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is between (time)|-|-|21.00|04.00|-|-|turn off the coffee machine|
+Rule_2|it is sunny|-|-|-|-|-|-|open the window|
+"
+1/24/2014 4:36:16,"SavedRules:4
+Rule_0|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_3|someone is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_4|it is between (time)|-|-|18.00|07.00|-|-|turn off the heating|
+"
+1/24/2014 6:13:50,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is between (time)|-|-|06.00|07.00|-|-|turn on the coffee machine|
+"
+1/24/2014 6:18:01,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the coffee machine|
+Rule_1|it is between (time)|-|-|17.00|20.00|-|-|turn on the light|
+Rule_2|it is sunny|-|-|-|-|-|-|open the window|
+"
+1/24/2014 7:19:57,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|temperature is between|20 C|22 C|-|-|-|-|turn off the heating|
+Rule_2|temperature is between|15 C|18 C|-|-|-|-|turn on the heating|
+"
+1/24/2014 7:27:57,"SavedRules:2
+Rule_0|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|someone is in the room|-|-|-|-|-|-|turn on the heating|
+"
+1/24/2014 7:31:04,"SavedRules:2
+Rule_0|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_1|temperature is between|24 C|26 C|-|-|-|-|turn off the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+"
+1/24/2014 7:37:12,"SavedRules:2
+Rule_0|temperature is between|15 C|19 C|-|-|-|-|turn on the heating|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|someone is in the room|-|-|-|-|-|-|turn on the coffee machine|
+"
+1/24/2014 7:52:32,"SavedRules:3
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|temperature is between|60 F|64 F|-|-|-|-|turn on the heating|
+Rule_3|temperature is between|67 F|72 F|-|-|-|-|turn off the heating|
+"
+1/24/2014 7:59:33,"SavedRules:2
+Rule_0|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the coffee machine|
+Rule_2|temperature is between|60 F|75 F|-|-|-|-|turn on the heating|
+"
+1/24/2014 8:34:22,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is between (time)|-|-|20.00|06.00|-|-|turn off the heating|
+Rule_2|it is sunny|-|-|-|-|-|-|open curtains|
+"
+1/24/2014 9:10:13,"SavedRules:7
+Rule_0|temperature is between|15 C|19 C|-|-|-|-|turn on the heating|
+Rule_1|temperature is between|23 C|25 C|-|-|-|-|turn off the heating|
+Rule_2|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_3|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_4|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the light|
+Rule_5|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the heating|
+Rule_6|it is between (time)|-|-|12.00|14.00|-|-|turn on the microwave|
+Rule_7|it is rainy|-|-|-|-|-|-|open curtains|
+"
+1/24/2014 9:15:16,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|15 C|18 C|-|-|-|-|turn on the heating|
+Rule_2|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the light|
+"
+1/24/2014 9:16:45,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the coffee machine|
+Rule_2|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the heating|
+"
+1/24/2014 9:54:49,"SavedRules:6
+Rule_0|someone is in the room|-|-|-|-|-|-|open curtains|
+Rule_1|it is between (time)|-|-|10.00|16.00|-|-|turn off the light|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the microwave|
+Rule_3|nobody is in the room|-|-|-|-|-|-|turn off the coffee machine|
+Rule_4|nobody is in the room|-|-|-|-|-|-|close the window|
+Rule_5|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_6|nobody is in the room|-|-|-|-|-|-|turn off the light|
+"
+1/24/2014 10:07:06,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|Select a trigger|-|-|-|-|-|-|Select an action|
+Rule_2|Select a trigger|-|-|-|-|-|-|Select an action|
+"
+1/24/2014 10:08:48,"SavedRules:2
+Rule_0|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is between (time)|-|-|07.00|19.00|-|-|turn on the heating|
+"
+1/24/2014 10:25:02,"SavedRules:4
+Rule_0|it is sunny|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|15 C|21 C|-|-|-|-|turn on the heating|
+Rule_2|it is between (time)|-|-|07.00|08.00|-|-|open the window|
+Rule_3|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_4|it is between (time)|-|-|08.00|09.00|-|-|turn on the coffee machine|
+"
+1/24/2014 10:51:41,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the coffee machine|
+"
+1/24/2014 11:52:26,"SavedRules:3
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_3|temperature is between|18 C|20 C|-|-|-|-|turn off the heating|
+"
+1/24/2014 12:03:33,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|22 C|28 C|-|-|-|-|turn off the heating|
+Rule_2|temperature is between|15 C|21 C|-|-|-|-|turn on the heating|
+"
+1/24/2014 12:27:48,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|open the window|
+Rule_1|temperature is between|21 C|25 C|-|-|-|-|turn off the microwave|
+Rule_2|it is rainy|-|-|-|-|-|-|turn on the coffee machine|
+"
+1/24/2014 13:45:49,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_2|someone is in the room|-|-|-|-|-|-|open the window|
+"
+1/24/2014 13:47:04,"SavedRules:2
+Rule_0|it is between (day)|-|-|-|-|Monday|Friday|turn on the heating|
+Rule_1|it is between (time)|-|-|16.00|07.00|-|-|turn off the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+"
+1/24/2014 13:51:06,"SavedRules:3
+Rule_0|it is between (time)|-|-|09.00|18.00|-|-|turn on the heating|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|someone is in the room|-|-|-|-|-|-|open curtains|
+Rule_3|it is between (time)|-|-|09.00|11.00|-|-|turn on the coffee machine|
+"
+1/24/2014 13:51:35,"SavedRules:7
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn on the microwave|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn on the coffee machine|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn on the light|
+Rule_3|nobody is in the room|-|-|-|-|-|-|turn on the heating|
+Rule_4|someone is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_5|someone is in the room|-|-|-|-|-|-|turn off the light|
+Rule_6|someone is in the room|-|-|-|-|-|-|turn off the coffee machine|
+Rule_7|someone is in the room|-|-|-|-|-|-|turn off the microwave|
+"
+1/24/2014 14:51:07,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|open curtains|
+Rule_1|it is sunny|-|-|-|-|-|-|close curtains|
+Rule_2|it is between (time)|-|-|06.00|15.00|-|-|turn on the coffee machine|
+"
+1/24/2014 15:01:05,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn air conditioning off|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_2|someone is in the room|-|-|-|-|-|-|turn on the light|
+"
+1/24/2014 15:42:01,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn air conditioning on|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|it is rainy|-|-|-|-|-|-|open curtains|
+"
+1/24/2014 19:43:30,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is sunny|-|-|-|-|-|-|close curtains|
+"
+1/24/2014 19:54:19,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the microwave|
+Rule_2|it is between (time)|-|-|21.00|07.00|-|-|turn air conditioning off|
+"
+1/25/2014 0:20:31,"SavedRules:2
+Rule_0|it is between (time)|-|-|08.00|18.00|-|-|turn on the coffee machine|
+Rule_1|it is between (day)|-|-|-|-|Saturday|Sunday|turn air conditioning off|
+Rule_2|it is rainy|-|-|-|-|-|-|turn on the light|
+"
+1/25/2014 2:50:16,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|temperature is between|18 C|21 C|-|-|-|-|turn off the heating|
+Rule_2|it is sunny|-|-|-|-|-|-|turn off the light|
+"
+1/25/2014 17:32:13,"SavedRules:6
+Rule_0|temperature is between|74 F|83 F|-|-|-|-|turn air conditioning on|
+Rule_1|temperature is between|60 F|68 F|-|-|-|-|turn on the heating|
+Rule_2|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_3|it is between (time)|-|-|23.00|06.00|-|-|turn off the coffee machine|
+Rule_4|it is between (time)|-|-|06.00|18.00|-|-|turn on the coffee machine|
+Rule_5|it is rainy|-|-|-|-|-|-|close the window|
+Rule_6|it is between (time)|-|-|22.00|08.00|-|-|close the window|
+"
+1/26/2014 7:10:53,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|it is between (day)|19 C|21 C|-|-|Saturday|Sunday|turn off the heating|
+Rule_2|it is between (time)|-|-|20.00|08.00|-|-|turn off the heating|
+"
+1/26/2014 7:18:20,"SavedRules:9
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|temperature is between|15 C|22 C|-|-|-|-|turn on the heating|
+Rule_3|temperature is between|26 C|28 C|-|-|-|-|turn air conditioning on|
+Rule_4|temperature is between|21 C|27 C|-|-|-|-|turn air conditioning off|
+Rule_5|temperature is between|21 C|27 C|-|-|-|-|turn off the heating|
+Rule_6|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_7|it is between (time)|-|-|07.00|09.00|-|-|turn on the coffee machine|
+Rule_8|it is between (time)|-|-|00.00|07.00|-|-|turn off the coffee machine|
+Rule_9|it is between (time)|-|-|10.00|23.59|-|-|turn off the coffee machine|
+"
+1/26/2014 7:22:23,"SavedRules:2
+Rule_0|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is between (time)|-|-|08.00|09.00|-|-|turn on the coffee machine|
+"
+1/29/2014 9:26:24,"SavedRules:2
+Rule_0|someone is in the room|-|-|-|-|-|-|turn air conditioning on|
+Rule_1|Select a trigger|-|-|-|-|-|-|Select an action|
+Rule_2|Select a trigger|-|-|-|-|-|-|Select an action|
+"
+1/29/2014 16:28:38,"SavedRules:2
+Rule_0|it is between (time)|-|-|08.00|17.00|-|-|turn on the heating|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the microwave|
+Rule_2|nobody is in the room|-|-|-|-|-|-|open the window|
+"
+1/30/2014 5:50:59,"SavedRules:7
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|temperature is between|15 C|18 C|-|-|-|-|turn on the heating|
+Rule_3|it is between (time)|-|-|19.00|08.00|-|-|close curtains|
+Rule_4|it is between (day)|-|-|-|-|Saturday|Sunday|turn off the light|
+Rule_5|temperature is between|22 C|28 C|-|-|-|-|turn off the heating|
+Rule_6|temperature is between|26 C|28 C|-|-|-|-|turn air conditioning on|
+Rule_7|temperature is between|15 C|25 C|-|-|-|-|turn air conditioning off|
+"
+1/30/2014 6:44:15,"SavedRules:2
+Rule_0|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_2|it is between (time)|-|-|07.00|23.00|-|-|turn off the light|
+"
+1/31/2014 13:04:33,"UserCategory: 
+SavedRules: 3
+Rule_0|someone is in the room|-|-|-|-|-|-|turn on the light|
+Rule_1|nobody is in the room|-|-|-|-|-|-|turn off the light|
+Rule_2|it is sunny|-|-|-|-|-|-|open curtains|
+Rule_3|it is sunny|-|-|-|-|-|-|turn off the heating|
+"
+2/13/2014 7:58:48,"UserCategory: 
+SavedRules: 3
+Rule_0|temperature is between|77 F|75 F|-|-|-|-|open the window|
+Rule_1|someone is in the room|-|-|-|-|-|-|turn off the heating|
+Rule_2|it is between (day)|-|-|-|-|Friday|Sunday|turn on the coffee machine|
+Rule_3|it is between (time)|-|-|15.00|15.00|-|-|turn off the coffee machine|
+"

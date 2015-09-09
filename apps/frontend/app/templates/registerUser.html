@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h1>Registration</h1>
+
+  <br>
+
+  <p>Thank you for partecipating this survey!</p>
+
+  <br>
+  <br>
+
+  <h3>Warning</h3>
+  <p>This is an experimental app. There is no mechanism of password recovery so please be very carefull about your personal data.</p>
+  <p>It is not required to insert your actual personal data.</p>
+  <p><b>Again: PLEASE REMEMBER YOUR USERNAME, PASSWORD and the user UUID that will be provided you after the registration process.</b></p>
+
+
+  <br>
+  <br>
+  <br>
+
+
+  <form action="{{request.path}}" method=post>
+    <dl>
+      <dt>Person name:
+      <dd><input type=text name=personName>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=password>
+
+      <dd><input type=submit value=Register>
+      <input type=hidden name=email value={{source}}>
+    </dl>
+  </form>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+{% endblock %}

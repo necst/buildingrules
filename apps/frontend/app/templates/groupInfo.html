@@ -1,0 +1,15 @@
+<h1>
+Group {{groupInfo.buildingName}}/{{groupInfo.id}}
+</h1>
+
+<p><b>Description: </b> {{groupInfo.description}}</p>
+
+<hr>
+
+<h3>Room list:</h3>
+
+<ul>
+	{% for room in rooms %}
+		<li> {{room.buildingName}}-{{room.roomName}}: {{room.description}}</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,79 @@
+{
+    "dish_washer": [
+        {
+            "elastic": "TRUE",
+            "from": "10:00",
+            "to": "11:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "12:00",
+            "to": "14:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "04:00",
+            "to": "05:00"
+        }
+    ],
+    "washing_machine": [
+        {
+            "elastic": "TRUE",
+            "from": "16:00",
+            "to": "17:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "18:00",
+            "to": "19:00"
+        }
+    ],
+    "air_conditioner": [
+        {
+            "elastic": "TRUE",
+            "from": "20:00",
+            "to": "22:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "23:00",
+            "to": "24:00"
+        }
+    ],
+     "dryer": [
+        {
+            "elastic": "TRUE",
+            "from": "16:00",
+            "to": "17:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "18:00",
+            "to": "19:00"
+        }
+    ],
+     "electric_oven": [
+        {
+            "elastic": "TRUE",
+            "from": "16:00",
+            "to": "17:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "18:00",
+            "to": "19:00"
+        }
+    ],
+     "television": [
+        {
+            "elastic": "TRUE",
+            "from": "15:00",
+            "to": "20:00"
+        },
+        {
+            "elastic": "TRUE",
+            "from": "22:00",
+            "to": "23:00"
+        }
+    ]     
+}

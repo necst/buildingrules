@@ -1,0 +1,476 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/ruleForm.js') }}"></script>
+  <script>
+  window.onload = function(){
+    init();
+
+  };
+  </script>
+
+    {% if rule %}
+    <h3>Rule Editing!</h3>
+  {% else %}
+    <h3>Add a new rule!</h3>
+  {% endif %}
+  <br>
+
+  {% if insertionForGroup %}
+    <p>This form let you to add a rule to the choosen group.</p>
+  {% endif %}
+
+  {% if insertionForRoom %}
+    <p>This form let you to add a rule to the choosen room.</p>
+  {% endif %}
+
+
+  <br>
+
+  <form class="form-horizontal" action="{{request.path}}" method="POST">
+
+    <div class="control-group">
+      <label class="control-label" for="ruleBody">Your new rule</label>
+      <div class="controls">
+        <textarea readonly rows="3" class="field span6" onclick="ruleBodyAlert();"  id="ruleBody" name="ruleBody" >{% if rule %} if {{rule.antecedent}} then {{rule.consequent}} {% else %} {% if ruleBody %} {{ruleBody}} {% endif %} {% endif %}</textarea>
+
+
+              {% if conflictFound %}
+                <br>
+                <br>
+                <div class="alert alert-block" style="width:700px;" >
+                  <strong> 
+                    <h4>Conflict detected!</h4>
+                    The rule you are trying to save is conflicting with one of these rules:
+                  </strong>
+                  <br>
+                  {% if conflictingRuleList %}
+                    {% for conflictingRule in conflictingRuleList %}
+                      <br> -  {{conflictingRule.ruleBody}} 
+                      [<a href="/buildings/{{buildingName}}/rooms/{{roomName}}/rules/{{conflictingRule.ruleId}}/edit">Edit</a>]
+                      [<a href="/buildings/{{buildingName}}/rooms/{{roomName}}/rules/{{conflictingRule.ruleId}}/delete">Delete</a>]
+                      [<a href="/buildings/{{buildingName}}/rooms/{{roomName}}/rules/{{conflictingRule.ruleId}}/disable">Disable</a>]
+                    {% endfor %}
+                  {% else %}
+                    <br> - I'm sorry, I cannot undestand which are the possible conflicting rules.
+                    <br> - Maybe, there is a problem in the rule you are trying to save.
+                  {% endif %}
+                </div>
+                <br>
+              {% endif %}
+
+
+              <hr>
+              <h3 class="muted">Rule composer</h3>
+
+              <div class="btn-toolbar">
+                  <a href="javascript:addTriggerPortion();"><button class="btn" type="button">Add trigger</button></a>
+                  <a href="javascript:removeTriggerPortion();"><button class="btn" type="button">Remove trigger</button></a>
+              </div>
+              
+              
+              
+
+
+                    <div id="triggerPortion_0">
+                            <hr>
+                            <h3 class="muted">IF</h3>
+                            <select name="trigger_0" id="trigger_0" onchange="triggerSelected(0)">
+                              <option>Select a trigger</option>
+                                {% for trigger in availableTriggers %}
+                                  <option>{{trigger}}</option>
+                                {% endfor %}               
+                            </select>
+
+                            <div id="temperature_box_0">
+                              <select name="temperature_from_0" id="temperature_from_0">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                              <h4 class="muted">and</h4> 
+                              <select name="temperature_to_0" id="temperature_to_0">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                            </div>
+
+                            <div id="time_box_0">
+                              <select name="time_from_0" id="time_from_0">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="time_to_0" id="time_to_0">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                            </div>
+
+                            <div id="day_box_0">
+                              <select name="day_0" id="day_0">
+                                <option> - </option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
+                              </select>
+                            </div>
+
+                            <div id="date_box_0">
+                              <select name="date_day_from_0" id="date_day_from_0">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_from_0" id="date_month_from_0">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="date_day_to_0" id="date_day_to_0">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_to_0" id="date_month_to_0">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </div>
+                    
+
+                    </div>
+
+                    
+
+
+                    <div id="triggerPortion_1">
+                            <hr>
+                            <h3 class="muted">AND</h3>                    
+                            <select name="trigger_1" id="trigger_1" onchange="triggerSelected(1)">
+                              <option>Select a trigger</option>
+                                {% for trigger in availableTriggers %}
+                                  <option>{{trigger}}</option>
+                                {% endfor %}               
+                            </select>
+
+                            <div id="temperature_box_1">
+                              <select name="temperature_from_1" id="temperature_from_1">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                              <h4 class="muted">and</h4> 
+                              <select name="temperature_to_1" id="temperature_to_1">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                            </div>
+
+                            <div id="time_box_1">
+                              <select name="time_from_1" id="time_from_1">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="time_to_1" id="time_to_1">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                            </div>
+
+                            <div id="day_box_1">
+                              <select name="day_1" id="day_1">
+                                <option> - </option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
+                              </select>
+                            </div>
+
+                            <div id="date_box_1">
+                              <select name="date_day_from_1" id="date_day_from_1">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_from_1" id="date_month_from_1">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="date_day_to_1" id="date_day_to_1">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_to_1" id="date_month_to_1">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </div>
+                    </div>
+
+
+                   <div id="triggerPortion_2">
+                            <hr>
+                            <h3 class="muted">AND</h3>                                       
+                            <select name="trigger_2" id="trigger_2" onchange="triggerSelected(2)">
+                              <option>Select a trigger</option>
+                                {% for trigger in availableTriggers %}
+                                  <option>{{trigger}}</option>
+                                {% endfor %}               
+                            </select>
+
+                            <div id="temperature_box_2">
+                              <select name="temperature_from_2" id="temperature_from_2">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                              <h4 class="muted">and</h4> 
+                              <select name="temperature_to_2" id="temperature_to_2">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                            </div>
+
+                            <div id="time_box_2">
+                              <select name="time_from_2" id="time_from_2">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="time_to_2" id="time_to_2">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                            </div>
+
+                            <div id="day_box_2">
+                              <select name="day_2" id="day_2">
+                                <option> - </option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
+                              </select>
+                            </div>
+
+                            <div id="date_box_2">
+                              <select name="date_day_from_2" id="date_day_from_2">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_from_2" id="date_month_from_2">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="date_day_to_2" id="date_day_to_2">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_to_2" id="date_month_to_2">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </div>
+                    </div>
+
+
+                   <div id="triggerPortion_3">
+                            <hr>
+                            <h3 class="muted">AND</h3>                                       
+                            <select name="trigger_3" id="trigger_3" onchange="triggerSelected(3)">
+                              <option>Select a trigger</option>
+                                {% for trigger in availableTriggers %}
+                                  <option>{{trigger}}</option>
+                                {% endfor %}               
+                            </select>
+
+                            <div id="temperature_box_3">
+                              <select name="temperature_from_3" id="temperature_from_3">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                              <h4 class="muted">and</h4> 
+                              <select name="temperature_to_3" id="temperature_to_3">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                            </div>
+
+                            <div id="time_box_3">
+                              <select name="time_from_3" id="time_from_3">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="time_to_3" id="time_to_3">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                            </div>
+
+                            <div id="day_box_3">
+                              <select name="day_3" id="day_3">
+                                <option> - </option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
+                              </select>
+                            </div>
+
+                            <div id="date_box_3">
+                              <select name="date_day_from_3" id="date_day_from_3">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_from_3" id="date_month_from_3">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="date_day_to_3" id="date_day_to_3">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_to_3" id="date_month_to_3">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </div>
+                    </div>
+
+
+                   <div id="triggerPortion_4">
+                            <hr>
+                            <h3 class="muted">AND</h3>                                       
+                            <select name="trigger_4" id="trigger_4" onchange="triggerSelected(4)">
+                              <option>Select a trigger</option>
+                                {% for trigger in availableTriggers %}
+                                  <option>{{trigger}}</option>
+                                {% endfor %}               
+                            </select>
+
+                            <div id="temperature_box_4">
+                              <select name="temperature_from_4" id="temperature_from_4">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                              <h4 class="muted">and</h4> 
+                              <select name="temperature_to_4" id="temperature_to_4">
+                                <option> - </option><option>60F</option><option>61F</option><option>62F</option><option>63F</option><option>64F</option><option>65F</option><option>66F</option><option>67F</option><option>68F</option><option>69F</option><option>70F</option><option>71F</option><option>72F</option><option>73F</option><option>74F</option><option>75F</option><option>76F</option><option>77F</option><option>78F</option><option>79F</option><option>80F</option><option>81F</option><option>82F</option><option>83F</option>
+                              </select>
+                            </div>
+
+                            <div id="time_box_4">
+                              <select name="time_from_4" id="time_from_4">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="time_to_4" id="time_to_4">
+                                <option> - </option><option>00.00</option><option>01.00</option><option>02.00</option><option>03.00</option><option>04.00</option><option>05.00</option><option>06.00</option><option>07.00</option><option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option><option>12.00</option><option>13.00</option><option>14.00</option><option>15.00</option><option>16.00</option><option>17.00</option><option>18.00</option><option>19.00</option><option>20.00</option><option>21.00</option><option>22.00</option><option>23.00</option>
+                              </select>
+                            </div>
+
+                            <div id="day_box_4">
+                              <select name="day_4" id="day_4">
+                                <option> - </option><option>Sunday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
+                              </select>
+                            </div>
+
+                            <div id="date_box_4">
+                              <select name="date_day_from_4" id="date_day_from_4">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_from_4" id="date_month_from_4">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                              <h4 class="muted">and</h4>  
+                              <select name="date_day_to_4" id="date_day_to_4">
+                                <option> Day </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                              </select>
+                              <select name="date_month_to_4" id="date_month_to_4">
+                                <option> Month </option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </div>
+                    </div>                    
+
+
+
+              <hr>
+              <h3 class="muted">THEN</h3>
+
+              <select name="action_0" id="action_0" onchange="actionSelected()">
+                <option>Select an action</option>
+                {% for action in availableActions %}
+                  <option>{{action}}</option>
+                {% endfor %}               
+              </select>  
+
+              <div id="action_temperature_box">
+                    <br>
+                    <bold class="muted">Desired temperature</bold> <input type="range" min ="60" max="83" name="desired_temperature" id="desired_temperature" value="70" onchange="updateTemperatureSetpoint()"><bold class="muted">F</bold> 
+                    <br>
+                    <bold class="muted">Accepted range</bold> <input type="range" min ="3" max="7" name="accepted_temperature_range" id="accepted_temperature_range" value="4" onchange="updateTemperatureSetpoint()">
+                    <bold class="muted">%</bold> 
+                    
+                    <input type="hidden" id="tempSetpoint_min" value"">
+                    <input type="hidden" id="tempSetpoint_max" value"">
+                    
+                    <div style="width:300px;" >
+                        
+                        <table width="100%">
+                          <tr>
+                            <td id="tempSetpoint_bar_min" style="background-color:#FFFF66;" align="right">-</td>
+                            <td id="tempSetpoint_bar_value"  style="background-color:#CCFF66;" width="20%"  align="center" >-</td>
+                            <td id="tempSetpoint_bar_max" style="background-color:#FFFF66;"  align="left">-</td>
+                          </tr>
+                        </table>
+                        <br>
+                        <br>
+
+                    </div>
+              </div>
+
+
+              <div id="action_humidity_box">
+                    <br>
+                    <bold class="muted">Desired humidity</bold> <input type="range" min ="10" max="90" name="desired_humidity" id="desired_humidity" value="70" onchange="updateHumiditySetpoint()"><bold class="muted">%</bold> 
+                    <br>
+                    <bold class="muted">Accepted range</bold> <input type="range" min ="3" max="7" name="accepted_humidity_range" id="accepted_humidity_range" value="4" onchange="updateHumiditySetpoint()">
+                    <bold class="muted">%</bold> 
+                    
+                    <input type="hidden" id="humiditySetpoint_min" value"">
+                    <input type="hidden" id="humiditySetpoint_max" value"">
+                    
+                    <div style="width:300px;" >
+                        
+                        <table width="100%">
+                          <tr>
+                            <td id="humiditySetpoint_bar_min" style="background-color:#FFFF66;" align="right">-</td>
+                            <td id="humiditySetpoint_bar_value"  style="background-color:#CCFF66;" width="20%"  align="center" >-</td>
+                            <td id="humiditySetpoint_bar_max" style="background-color:#FFFF66;"  align="left">-</td>
+                          </tr>
+                        </table>
+                        <br>
+                        <br>
+
+                    </div>
+              </div>
+
+              <div id="action_blind_box">
+                <bold class="muted">OPEN</bold> <input type="range" min ="0" max="100" name="actionBlind" id="actionBlind" value="50" onchange="updateActionBlind(this.value);"> <bold class="muted">CLOSED</bold>
+                <input type="text" name="actionBlindText" id="actionBlindText" readonly="" class="input-small" value="">
+              </div>
+
+              <a href="javascript:compose();"><button class="btn" type="button">Compose the rule!</button></a>
+
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+
+
+          
+
+    <div class="control-group">
+      <label class="control-label" for="priority">Rule priority</label>
+      <div class="controls">
+
+      {% if insertionForGroup %}
+        <bold class="muted">LOW</bold> <input type="range" min ="0" max="{{session.maxGroupPriority}}" name="priority" id="priority" value="{% if rule %}{{rule.priority}}{% endif %}" onchange="updatePriority(this.value);"> <bold class="muted">HIGH</bold>
+        <input type="text" name="priorityTextBox" id="priorityTextBox" readonly="" class="input-small" value="{% if rule %}{{rule.priority}}{% else %}{% if priority %}{{priority}}{% else %}{{session.maxGroupPriority // 2}}{% endif %}{% endif %}">
+      {% endif %}
+
+      {% if insertionForRoom %}
+        <bold class="muted">LOW</bold> <input type="range" min ="0" max="{{session.maxRoomPriority}}" name="priority" id="priority" value="{% if rule %}{{rule.priority}}{% endif %}" onchange="updatePriority(this.value);"> <bold class="muted">HIGH</bold>
+        <input type="text" name="priorityTextBox" id="priorityTextBox" readonly="" class="input-small" value="{% if rule %}{{rule.priority}}{% else %}{% if priority %}{{priority}}{% else %}{{session.maxRoomPriority // 2}}{% endif %}{% endif %}">
+      {% endif %}
+      
+      <br>
+      <small class="muted"><b>Allowed priority values:</b></small>
+      {% if insertionForGroup %}
+        <br>
+        <small class="muted">Group priority: [0-{{session.maxGroupPriority}}]</small>
+      {% endif %}
+      <br>
+      <small class="muted">Room priority: [0-{{session.maxRoomPriority}}]</small>
+
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+      {% if rule %}
+        <button type="submit" class="btn btn-large btn-primary">Save the modifications!</button>
+      {% else %}
+        <button type="submit" class="btn btn-large btn-primary">Save the new rule!</button>
+      {% endif %}
+      </div>
+   </div>
+
+  </form>
+
+  <br>
+  <br>
+
+
+
+
+  {% endif %}
+{% endblock %}

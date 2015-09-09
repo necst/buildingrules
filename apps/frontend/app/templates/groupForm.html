@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+
+
+	<h3>Manage groups!</h3>
+	<br>
+
+	<h5>Create a new group</h5>
+
+	<form class="form-horizontal" action="{{request.path}}" method="POST">
+
+	  <div class="control-group">
+	    <label class="control-label" for="description">Group description</label>
+	    <div class="controls">
+	      <input type="text" id="description" name="description" placeholder="The description of the group">
+	    </div>
+	  </div>
+ 
+
+	  <div class="control-group">
+	    <label class="control-label" for="room">Select the rooms you want to insert into the group:</label>
+	    <div class="controls">
+		    {% if roomList %}
+		  		{% for room in roomList %}
+		  			<label><input type="checkbox" name="room_{{room.roomName}}" value="{{room.roomName}}">Room {{room.roomName}}</label>
+				{% endfor %}
+			{% endif %}
+	    </div>
+	  </div>
+
+	  <div class="control-group">
+	    <label class="control-label" for="room">Group properties</label>
+	    <div class="controls">
+		  	<label><input type="checkbox" name="crossRoomsValidation" value="True">Cross room validation</label>
+		  	<br>
+		  	Select the cross room validation categories:
+
+		  	{% for category in categories %}
+		  	<label><input type="checkbox" name="filter_by_{{category}}" value="True">{{category}}</label>
+		  	{% endfor %}
+		  	
+	    </div>
+	  </div>
+
+
+	  <div class="control-group">
+	    <div class="controls">
+	      <button type="submit" class="btn">Save the new group!</button>
+	    </div>
+	 </div>
+	
+	</form>
+
+	<br>
+	<br>
+
+  {% endif %}
+{% endblock %}

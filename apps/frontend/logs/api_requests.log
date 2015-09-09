@@ -1,0 +1,267 @@
+INFO:root:BRulesDeamon> 2014-05-03 02:15:11 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/login with params {'password': u'$alenacci$2014'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/login HTTP/1.1" 200 135
+INFO:root:BRulesDeamon> 2014-05-03 02:15:11 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci HTTP/1.1" 200 265
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings HTTP/1.1" 200 188
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:12] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:12] "GET / HTTP/1.1" 302 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings HTTP/1.1" 200 188
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:12] "GET /buildings HTTP/1.1" 302 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:12] "GET /buildings/CSE HTTP/1.1" 302 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/rules/categories with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/rules/categories HTTP/1.1" 200 397
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms HTTP/1.1" 200 805
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/notifications with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/notifications HTTP/1.1" 200 80
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2107/rules HTTP/1.1" 200 30039
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2107/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:12 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2107/users HTTP/1.1" 200 19281
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2107/groups HTTP/1.1" 200 466
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2107/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2107/actions HTTP/1.1" 200 2747
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2109/rules HTTP/1.1" 200 23370
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2109/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2109/users HTTP/1.1" 200 19281
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2109/groups HTTP/1.1" 200 260
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2109/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2109/actions HTTP/1.1" 200 3718
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/rules HTTP/1.1" 200 5378
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/users HTTP/1.1" 200 1115
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/groups HTTP/1.1" 200 644
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/actions HTTP/1.1" 200 3718
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2130/rules HTTP/1.1" 200 28942
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2130/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:13 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2130/users HTTP/1.1" 200 19281
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2130/groups HTTP/1.1" 200 260
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2130/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2130/actions HTTP/1.1" 200 3718
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2140/rules HTTP/1.1" 200 13299
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2140/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2140/users HTTP/1.1" 200 10003
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2140/groups HTTP/1.1" 200 260
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2140/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2140/actions HTTP/1.1" 200 2900
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/rules HTTP/1.1" 200 11056
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/users HTTP/1.1" 200 19281
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/groups HTTP/1.1" 200 466
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/actions HTTP/1.1" 200 1930
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/rules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'includeGroupsRules': True, 'userUuid': 76, 'categoriesFilter': None, 'orderByPriority': True, 'includeTriggerCategory': True}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/3208/rules HTTP/1.1" 200 28847
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/activeRules with params {'filterByAuthor': False, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/3208/activeRules HTTP/1.1" 200 78
+INFO:root:BRulesDeamon> 2014-05-03 02:15:14 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/users with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/3208/users HTTP/1.1" 200 19281
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/groups with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/3208/groups HTTP/1.1" 200 260
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/triggers with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/3208/triggers HTTP/1.1" 200 2019
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/actions with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/3208/actions HTTP/1.1" 200 2900
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/1 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/1 HTTP/1.1" 200 300
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/2 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/2 HTTP/1.1" 200 270
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/3 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/3 HTTP/1.1" 200 278
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/4 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/4 HTTP/1.1" 200 276
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/5 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/5 HTTP/1.1" 200 260
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/6 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/6 HTTP/1.1" 200 265
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/8 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/8 HTTP/1.1" 200 269
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/75 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/75 HTTP/1.1" 200 263
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/10 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/10 HTTP/1.1" 200 264
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/11 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/11 HTTP/1.1" 200 276
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/13 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/13 HTTP/1.1" 200 262
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/14 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/14 HTTP/1.1" 200 271
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/17 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/17 HTTP/1.1" 200 267
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/18 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/18 HTTP/1.1" 200 261
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/20 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/20 HTTP/1.1" 200 255
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/22 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/22 HTTP/1.1" 200 269
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/23 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/23 HTTP/1.1" 200 264
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/24 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/24 HTTP/1.1" 200 268
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/25 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/25 HTTP/1.1" 200 279
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/26 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/26 HTTP/1.1" 200 272
+INFO:root:BRulesDeamon> 2014-05-03 02:15:15 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/uuid/27 with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/uuid/27 HTTP/1.1" 200 280
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /static/js/rooms.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /static/roomMaps/2111.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /static/roomMaps/thermalZonesMap.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/2107/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/2109/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/2111/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/2130/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/2140/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/2144/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:15] "GET /buildings/CSE/rooms/3208/graphicalView HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:16] "GET /static/gantt/js/jquery-ui-1.8.20.custom.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:16] "GET /static/gantt/js/jquery.cookie.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/2107/graphicalView/json HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/2111/graphicalView/json HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/2144/graphicalView/json HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/2109/graphicalView/json HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/2130/graphicalView/json HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/2140/graphicalView/json HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:18] "GET /buildings/CSE/rooms/3208/graphicalView/json HTTP/1.1" 200 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:18 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2111/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2111/simulation HTTP/1.1" 200 1160
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:25] "POST /buildings/CSE/rooms/2111/graphicalView HTTP/1.1" 200 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:25 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2144/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+DEBUG:requests.packages.urllib3.connectionpool:"POST /api/users/alenacci/buildings/CSE/rooms/2144/simulation HTTP/1.1" 200 784
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:36] "POST /buildings/CSE/rooms/2144/graphicalView HTTP/1.1" 200 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:36 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2109/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:37] "POST /buildings/CSE/rooms/2109/graphicalView HTTP/1.1" 500 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:37 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2130/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "POST /buildings/CSE/rooms/2130/graphicalView HTTP/1.1" 500 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:38 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2140/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "POST /buildings/CSE/rooms/2140/graphicalView HTTP/1.1" 500 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:38 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/3208/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "POST /buildings/CSE/rooms/3208/graphicalView HTTP/1.1" 500 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:38 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings/CSE/rooms/2107/simulation with params {'externalTemperature': u'60F', 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db', 'userUuid': 76, 'roomTemperature': u'60F', 'weather': u'Sunny', 'occupancyTimeRangeTo': u'00:00 AM', 'occupancyTimeRangeFrom': u'00:00 AM'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "POST /buildings/CSE/rooms/2107/graphicalView HTTP/1.1" 500 -
+INFO:root:BRulesDeamon> 2014-05-03 02:15:38 > API_REQUEST: Contacting http://192.168.199.151:5003/api/users/alenacci/buildings with params {'userUuid': 76, 'sessionKey': u'1LXNYS-4b6a1cd6eecd21f06866d117198ba9db'}
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 192.168.199.151
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings HTTP/1.1" 500 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.199.1 - - [03/May/2014 02:15:38] "GET /buildings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -

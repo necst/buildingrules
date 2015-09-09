@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+
+	<header class="jumbotron subhead" id="overview">
+	    <div class="span8">
+	      <h1>My Groups</h1>
+	      <p class="lead">With this page you can create your own simple rules for your own personal spaces. Just add the rules inside the correct box and... that's all!</p>
+	    </div>
+	    <div class="span4">
+	    </div>
+	</header>
+
+	<br>
+
+	<div class="row"> 
+	  <div class="span8">
+			<a href="{{request.path}}/add"><button type="button" class="btn">Create a new group</button></a>
+		</div>
+	</div>
+
+
+
+	{% if groupList %}
+		<section id="typography">
+			{% for group in groupList %}
+				<div class="row"> 
+					<div class="span8">
+						<h3>Group {{group.id}} - <i>{{group.description}}</i></h3>
+						<hr>
+
+
+
+							{% if rulesGroup[group.id] %}
+								{% for rule in rulesGroup[group.id] %}
+
+
+							    	<blockquote>
+							    		<p>
+							    			<b>if</b> {{rule.antecedent}} <b>then</b> {{rule.consequent}} 
+											<small class="muted">
+											<span class="badge">{{rule["priority"]}}</span>
+												By:
+												{% if session.userUuid == rule.authorUuid%}
+													You
+												{% else %}
+													{{authorList[rule.authorUuid].personName}} - <i>{{authorList[rule.authorUuid].email}}</i>
+												{% endif %}
+
+												[<a href="{{request.path}}/{{rule.groupId}}/rules/{{rule.id}}/edit">Edit</a>] [<a href="{{request.path}}/{{rule.groupId}}/rules/{{rule.id}}/delete">Delete</a>]
+
+											</small>
+							    		</p>
+							    	</blockquote>
+
+
+								{% endfor %}
+							{% else %}	
+								<p class="muted">No rules found for this group</p>
+							{% endif %}
+
+
+					</div>
+					<div class="span4">
+						<div class="well">
+						<h4>Properties</h4>
+						<h5>Rooms in this group</h5>
+
+						<p>
+							{% if roomsGroup[group.id] %}
+								{% for room in roomsGroup[group.id] %}
+									{{room.roomName}}; 
+								{% endfor %}
+							{% else %}	
+								<p class="muted">No room found for this group</p>
+							{% endif %}
+						</p>
+
+						<h5>Sensors</h5>
+						<p>-</p>
+						<h5>Actuators</h5>
+						<p>-</p>
+						<h5>Group type</h5>
+						{% if group.crossRoomsValidation %}
+							<p>Cross-Room Validator</p>
+							{{group['crossRoomsValidationCategories']}}
+						{% else %}
+							<p>Single-Room Validator</p>
+						{% endif %}
+						</div>
+					</div>					
+				</div>
+				<br>
+				<a href="{{request.path}}/{{group.id}}/rules/add"><button type="button" class="btn">Add a new rule</button></a>
+				<a href="{{request.path}}/{{group.id}}/delete"><button type="button" class="btn">Delete this group (no confirmation)</button></a>
+				<br>				
+				<br>				
+				<br>				
+		    {% endfor %}
+		</section>
+	{% endif %}
+
+
+	
+
+
+  {% endif %}
+{% endblock %}
